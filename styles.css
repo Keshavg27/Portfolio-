@@ -53,7 +53,6 @@ a {
   padding: 1rem 0 4rem;
 }
 
-/* Topbar */
 .topbar {
   display: flex;
   align-items: center;
@@ -82,7 +81,6 @@ a {
   color: var(--accent-deep);
 }
 
-/* Shared cards/panels */
 .hero-copy,
 .hero-card,
 .intro-panel,
@@ -96,7 +94,6 @@ a {
   box-shadow: var(--shadow);
 }
 
-/* Typography helpers */
 .eyebrow,
 .section-kicker,
 .card-label,
@@ -148,11 +145,15 @@ h3 {
 
 p,
 li,
-span {
+span,
+label,
+input,
+textarea,
+button {
   line-height: 1.65;
+  font-family: inherit;
 }
 
-/* Hero */
 .hero {
   padding: 0.25rem 0 1.5rem;
 }
@@ -234,7 +235,6 @@ span {
   font-size: 0.9rem;
 }
 
-/* General sections */
 .section {
   padding: 2.4rem 0 0;
 }
@@ -251,7 +251,6 @@ span {
   gap: 0.95rem;
 }
 
-/* Timeline / Education */
 .timeline {
   display: grid;
   gap: 1.1rem;
@@ -279,7 +278,6 @@ span {
   padding-left: 1rem;
 }
 
-/* Grids */
 .cards-grid,
 .projects-grid,
 .skills-layout {
@@ -308,7 +306,6 @@ span {
   color: var(--muted);
 }
 
-/* Projects */
 .projects-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -349,7 +346,6 @@ span {
   background: rgba(255, 255, 255, 0.14);
 }
 
-/* Skills */
 .skills-layout {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
@@ -360,7 +356,7 @@ span {
     var(--surface);
 }
 
-/* Contact section - new structured layout */
+/* Contact section */
 .contact-box {
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -437,8 +433,9 @@ span {
   border-radius: 10px;
   padding: 0.8rem 0.9rem;
   background: rgba(255, 255, 255, 0.65);
-  font: inherit;
+  font-size: 1rem;
   color: var(--ink);
+  appearance: none;
 }
 
 .contact-field textarea {
@@ -460,7 +457,7 @@ span {
   border-radius: 999px;
   background: var(--ink);
   color: #fff8ef;
-  font: inherit;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: transform 180ms ease, opacity 180ms ease;
@@ -471,7 +468,6 @@ span {
   opacity: 0.95;
 }
 
-/* Reveal Animation */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -483,7 +479,6 @@ span {
   transform: translateY(0);
 }
 
-/* Responsive */
 @media (max-width: 960px) {
   .hero-grid,
   .cards-grid,
@@ -494,6 +489,15 @@ span {
 
   .projects-grid-expanded .project-card.featured {
     grid-column: auto;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-left {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
 }
 
@@ -527,14 +531,8 @@ span {
     padding: 1.2rem;
   }
 
-  .contact-grid,
   .contact-form-row {
     grid-template-columns: 1fr;
-  }
-
-  .contact-left {
-    border-right: 0;
-    border-bottom: 1px solid var(--line);
   }
 
   h1 {
