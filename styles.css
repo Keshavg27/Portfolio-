@@ -266,10 +266,14 @@ button {
   background: rgba(255, 251, 245, 0.72);
   box-shadow: var(--shadow);
 }
-
-.timeline-meta {
+  .timeline-meta {
   color: var(--muted);
   font-size: 0.93rem;
+
+  display: flex;
+  flex-direction: column;   /* THIS is the fix */
+  gap: 0.2rem;
+}
 }
 
 .timeline-content ul,
